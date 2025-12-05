@@ -2,10 +2,10 @@
 
 A full-stack MERN project featuring:
 
--   ✅ Pagination\
--   ✅ Infinite Scroll\
--   ✅ Large dataset handling\
--   ✅ API-based data fetching\
+-   ✅ Pagination
+-   ✅ Infinite Scroll
+-   ✅ Large dataset handling
+-   ✅ API-based data fetching
 -   ✅ MongoDB storage + seeder API
 
 ------------------------------------------------------------------------
