@@ -62,13 +62,13 @@ A full-stack MERN project featuring:
 ### **Backend**
 
 backend/
-├── package.json      # Node.js dependencies & scripts
+├── package.json        # Node.js dependencies & scripts
 ├── .env                # Environment variables
 └── src/
     ├── config/         # Database configuration (db.js)
     ├── controllers/    # Route controllers
     │   ├── productController.js
-    │   └── seddController.js
+    │   └── swddController.js
     ├── models/         # MongoDB schemas
     │   └── productModel.js
     ├── routes/         # API routes
