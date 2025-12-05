@@ -1,7 +1,5 @@
 📦 React Pagination & Infinite Scroll Project
-![alt text](<Screenshot 2025-12-04 194827.png>) 
-![alt text](<Screenshot 2025-12-04 194810.png>)
-
+![alt text](<Screenshot 2025-12-04 194827.png>) ![alt text](<Screenshot 2025-12-04 194810.png>)
 Full-stack project with React, Node.js, Express, MongoDB, supporting:
 ✅ Pagination
 ✅ Infinite Scroll
@@ -43,16 +41,16 @@ Frontend
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── InfinateScrollList.jsx
+│   │   ├── ProductCard.jsx
+│   │   └── Pagination.jsx
 │   ├── pages/
 │   │   └── Home.jsx
-│   ├── api/
-│   │
-│   │
-|   └── api.js
+│   ├── hooks/
+│   │   └── useInfiniteScroll.js
+│   ├── services/
+│   │   └── api.js
 │   ├── App.jsx
 │   └── main.jsx
-│   └── style.css
 ├── package.json
 └── vite.config.js
 
@@ -62,20 +60,19 @@ backend/
 │   └── db.js
 ├── controllers/
 │   └── productController.js
-│   └── swddController.js
 ├── models/
 │   └── productModel.js
 ├── routes/
 │   └── productRoute.js
 ├── seeder/
 │   └── seedProducts.js
-├── app.js
+├── server.js
 └── package.json
 
 ⚙️ Installation Guide
 1️⃣ Clone the Project
-cd frontend
-npm run dev
+git clone https://github.com/your-username/react-pagination-project.git
+cd react-pagination-project
 
 🖥️ Backend Setup
 2️⃣ Install Dependencies
@@ -85,13 +82,14 @@ npm install
 3️⃣ Add MongoDB URL
 
 Create:
+
 backend/.env
+
 
 Add:
 
-MONGO_URI=mongodb://127.0.0.1:27017/ReactPagination
+MONGO_URL=mongodb://127.0.0.1:27017/paginationDB
 PORT=5000
-JWT_SECRET=RG735950
 
 4️⃣ Start Backend
 npm run dev
@@ -109,33 +107,26 @@ http://localhost:5000/api/products/seed
 
 This inserts 200 dummy products.
 
+🎨 Frontend Setup
+5️⃣ Install Dependencies
+cd frontend
+npm install
+
+6️⃣ Start Frontend
+npm run dev
 
 🔌 API Endpoints
 Get Paginated Products
-GET http://localhost:5000/api/products?page=1&limit=20
+GET /api/products?page=1&limit=20
 
 Response Example
 {
-    "page": 1,
-    "limit": 20,
-    "total": 200,
-    "totalPages": 10,
-    "products": [
-      {
-          "_id": "69316abda0a6d7346156b34d",
-          "title": "Product 1",
-          "description": "This is product number 1",
-          "price": 118,
-          "__v": 0
-      },
-      {
-          "_id": "69316abda0a6d7346156b34e",
-          "title": "Product 2",
-          "description": "This is product number 2",
-          "price": 211,
-          "__v": 0
-      },...
-    ]
+  "success": true,
+  "page": 1,
+  "limit": 20,
+  "totalProducts": 200,
+  "totalPages": 10,
+  "products": [...]
 }
 
 ⚡ Infinite Scroll Logic (Frontend)
@@ -170,10 +161,19 @@ Frontend
 React (Vite)
 
 Axios
+
+Zustand / Context (optional)
+
 CSS Modules
+
 Backend
+
 Node.js + Express
+
 MongoDB + Mongoose
+
 Nodemon
+
 CORS
+
 dotenv
