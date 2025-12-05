@@ -62,19 +62,21 @@ A full-stack MERN project featuring:
 ### **Backend**
 
     backend/
-    ├── config/
-    │   └── db.js
-    ├── controllers/
+├── package.json        # Node.js dependencies & scripts
+├── .env                # Environment variables
+└── src/
+    ├── config/         # Database configuration (db.js)
+    ├── controllers/    # Route controllers
     │   ├── productController.js
-    │   └── swddController.js
-    ├── models/
+    │   └── seddController.js
+    ├── models/         # MongoDB schemas
     │   └── productModel.js
-    ├── routes/
+    ├── routes/         # API routes
     │   └── productRoute.js
-    ├── seeder/
+    ├── seeder/         # Seeder scripts
     │   └── seedProducts.js
-    ├── app.js
-    └── package.json
+    └── app.js          # Main server entry point
+
 
 ------------------------------------------------------------------------
 
